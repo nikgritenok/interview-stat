@@ -10,12 +10,17 @@ import InputText from 'primevue/inputtext'
 import Menubar from 'primevue/menubar'
 import PrimeVue from 'primevue/config'
 import ProgressSpinner from 'primevue/progressspinner'
+import DataTable from 'primevue/datatable'
+import Column from 'primevue/column'
 import Toast from 'primevue/toast'
 import { ToastService } from 'primevue'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { initializeApp } from 'firebase/app'
+import ConfirmDialog from 'primevue/confirmdialog'
 import router from './router'
+import ConfirmationService from 'primevue/confirmationservice'
+import Message from 'primevue/message'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB3ymzNr8VCyzM39RgeSbPi2t9PobX01OI',
@@ -32,6 +37,7 @@ initializeApp(firebaseConfig)
 const app = createApp(App)
 
 app.use(ToastService)
+app.use(ConfirmationService)
 app.use(createPinia())
 app.use(router)
 app.use(PrimeVue, {
@@ -50,5 +56,9 @@ app.component('app-input-text', InputText)
 app.component('app-toast', Toast)
 app.component('app-progress-spinner', ProgressSpinner)
 app.component('app-card', Card)
+app.component('app-datatable', DataTable)
+app.component('app-column', Column)
+app.component('app-dialog', ConfirmDialog)
+app.component('app-message', Message)
 
 app.mount('#app')
