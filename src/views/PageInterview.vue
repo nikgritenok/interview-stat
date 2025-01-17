@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, updateDoc, Timestamp } from 'firebase/firestore'
 import { useUserStore } from '@/stores/user'
 import type { IInterview, IStage } from '@/interfaces'
-import dayjs from 'dayjs'
 
 const userStore = useUserStore()
 const db = getFirestore()
@@ -18,7 +17,24 @@ const docref = doc(db, `users/${userStore.userId}/interviews/`, route.params.id 
 const getData = async (): Promise<void> => {
   isLoading.value = true
   const docSnap = await getDoc(docref)
-  interview.value = docSnap.data() as IInterview
+
+  if (docSnap.exists()) {
+    const data = docSnap.data() as IInterview
+
+    if (data.stages && data.stages.length) {
+      data.stages = data.stages.map((stage: IStage) => {
+        if (stage.date && stage.date instanceof Timestamp) {
+          return {
+            ...stage,
+            date: stage.date.toDate(),
+          }
+        }
+        return stage
+      })
+    }
+    interview.value = data
+  }
+
   isLoading.value = false
   console.log(interview.value)
 }
@@ -48,20 +64,12 @@ const saveInterview = async (): Promise<void> => {
   isLoading.value = false
 }
 
-const saveDateStage = (index: number) => {
-  if (interview.value?.stages && interview.value.stages.length) {
-    const date = interview.value.stages[index].date
-    interview.value.stages[index].date = dayjs(date).format('DD.MM.YYYY')
-  }
-}
-
 onMounted(async () => await getData())
 </script>
 
 <template>
   <app-progress-spinner v-if="isLoading" />
   <div class="content-interview" v-else-if="interview?.id && !isLoading">
-    <div>{{ interview }}</div>
     <app-card>
       <template #title>Собеседование в компанию {{ interview.company }}</template>
       <template #content>
@@ -151,9 +159,8 @@ onMounted(async () => await getData())
                 class="input mb-3"
                 :id="`stage-date-${index}`"
                 dateFormat="dd.mm.yy"
-                @date-select="saveDateStage(index)"
                 v-model="stage.date"
-              ></app-datepicker>
+              />
             </div>
             <div class="flex flex-column gap-2">
               <label :for="`stage-description-${index}`">Комментарий</label>

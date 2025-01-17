@@ -25,6 +25,9 @@ import InputNumber from 'primevue/inputnumber'
 import Textarea from 'primevue/textarea'
 import DatePicker from 'primevue/datepicker'
 import RadioButton from 'primevue/radiobutton'
+import Tooltip from 'primevue/tooltip'
+import Badge from 'primevue/badge'
+import Chart from 'primevue/chart'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB3ymzNr8VCyzM39RgeSbPi2t9PobX01OI',
@@ -44,6 +47,7 @@ app.use(ToastService)
 app.use(ConfirmationService)
 app.use(createPinia())
 app.use(router)
+app.directive('tooltip', Tooltip)
 app.use(PrimeVue, {
   theme: {
     preset: Aura,
@@ -68,5 +72,7 @@ app.component('app-input-number', InputNumber)
 app.component('app-textarea', Textarea)
 app.component('app-datepicker', DatePicker)
 app.component('app-radiobutton', RadioButton)
+app.component('app-badge', Badge)
+app.component('app-chart', Chart)
 
 app.mount('#app')

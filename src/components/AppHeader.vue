@@ -37,7 +37,7 @@ const items = ref<IMenuItem[]>([
   {
     label: 'Статистика',
     icon: 'pi pi-chart-pie',
-    path: '/list',
+    path: '/statistic',
     show: computed((): boolean => !!userStore.userId),
   },
 ])
