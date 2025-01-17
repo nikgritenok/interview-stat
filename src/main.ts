@@ -21,6 +21,10 @@ import ConfirmDialog from 'primevue/confirmdialog'
 import router from './router'
 import ConfirmationService from 'primevue/confirmationservice'
 import Message from 'primevue/message'
+import InputNumber from 'primevue/inputnumber'
+import Textarea from 'primevue/textarea'
+import DatePicker from 'primevue/datepicker'
+import RadioButton from 'primevue/radiobutton'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB3ymzNr8VCyzM39RgeSbPi2t9PobX01OI',
@@ -60,5 +64,9 @@ app.component('app-datatable', DataTable)
 app.component('app-column', Column)
 app.component('app-dialog', ConfirmDialog)
 app.component('app-message', Message)
+app.component('app-input-number', InputNumber)
+app.component('app-textarea', Textarea)
+app.component('app-datepicker', DatePicker)
+app.component('app-radiobutton', RadioButton)
 
 app.mount('#app')
