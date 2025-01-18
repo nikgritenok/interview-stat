@@ -1,39 +1,37 @@
-# interview-stat
+# Приложение список собеседований
 
-This template should help get you started developing with Vue 3 in Vite.
+Это приложение для отслеживания пройденных собеседований, созданное с использованием Vue.js, PrimeVue, TypeScript и CSS. Оно позволяет пользователям просматривать и управлять данными о собеседованиях, добавлять новые собеседования, редактировать и удалять существующие.
 
-## Recommended IDE Setup
+## Используемые технологии
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **HTML**
+- **TypeScript**
+- **Vue**
+- **Pinia**
+- **Yarn**
+- **Vite**
+- **ESLint**
+- **Prettier**
 
-## Type Support for `.vue` Imports in TS
+## Как запустить проект локально
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. Склонируйте репозиторий:
 
-## Customize configuration
+   ```bash
+   git clone https://github.com/yourusername/todo-app.git
+   cd todo-app
+   ```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+2. Установите зависимости:
 
-## Project Setup
+   ```bash
+   yarn install
+   ```
 
-```sh
-yarn
-```
+3. Запустите приложение:
 
-### Compile and Hot-Reload for Development
+   ```bash
+   yarn dev
+   ```
 
-```sh
-yarn dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-yarn build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
-```
+4. Откройте приложение в браузере по адресу [http://localhost:5173](http://localhost:5173).
