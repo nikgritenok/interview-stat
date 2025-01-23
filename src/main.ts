@@ -29,15 +29,7 @@ import Tooltip from 'primevue/tooltip'
 import Badge from 'primevue/badge'
 import Chart from 'primevue/chart'
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyB3ymzNr8VCyzM39RgeSbPi2t9PobX01OI',
-  authDomain: 'interview-stat.firebaseapp.com',
-  projectId: 'interview-stat',
-  storageBucket: 'interview-stat.firebasestorage.app',
-  messagingSenderId: '486644380981',
-  appId: '1:486644380981:web:af938b01b8f6eaa2cfc87c',
-  measurementId: 'G-TBGHECJ60R',
-}
+const firebaseConfig = import.meta.env.firebaseconfig
 
 initializeApp(firebaseConfig)
 
