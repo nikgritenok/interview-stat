@@ -29,7 +29,7 @@ import Tooltip from 'primevue/tooltip'
 import Badge from 'primevue/badge'
 import Chart from 'primevue/chart'
 
-const firebaseConfig = import.meta.env.firebaseconfig
+const firebaseConfig = JSON.parse(import.meta.env.VITE_FIREBASECONFIG)
 
 initializeApp(firebaseConfig)
 
