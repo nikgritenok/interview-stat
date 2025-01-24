@@ -59,13 +59,13 @@ const setChartData = () => {
       {
         data,
         backgroundColor: [
-          documentStyle.getPropertyValue('--p-cyan-500'),
-          documentStyle.getPropertyValue('--p-orange-500'),
+          documentStyle.getPropertyValue('--p-green-500'),
+          documentStyle.getPropertyValue('--p-red-500'),
           documentStyle.getPropertyValue('--p-gray-500'),
         ],
         hoverBackgroundColor: [
-          documentStyle.getPropertyValue('--p-cyan-400'),
-          documentStyle.getPropertyValue('--p-orange-400'),
+          documentStyle.getPropertyValue('--p-green-400'),
+          documentStyle.getPropertyValue('--p-red-400'),
           documentStyle.getPropertyValue('--p-gray-400'),
         ],
       },
