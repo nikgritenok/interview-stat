@@ -233,4 +233,15 @@ onMounted(async () => {
   display: flex;
   gap: 5px;
 }
+
+.p-badge {
+  font-size: 14px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
 </style>
