@@ -64,7 +64,7 @@ const signOutMethod = async () => {
         @click="signOutMethod"
         class="flex align-items-center menu-exit"
       >
-        <span class="pi pi-sign-out p-p-menuitem-icon"></span>
+        <span class="pi pi-sign-out p-menuitem-icon"></span>
         <span class="ml-2">Выход</span>
       </span>
     </template>
