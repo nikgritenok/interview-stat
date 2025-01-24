@@ -201,7 +201,9 @@ onMounted(async () => await getData())
             </div>
           </div>
         </div>
-        <app-button label="Сохранить" icon="pi pi-save" severity="info" @click="saveInterview" />
+        <router-link :to="`/list`">
+          <app-button label="Сохранить" icon="pi pi-save" severity="info" @click="saveInterview" />
+        </router-link>
       </template>
     </app-card>
   </div>
