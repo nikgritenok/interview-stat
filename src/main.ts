@@ -30,6 +30,8 @@ import Badge from 'primevue/badge'
 import Chart from 'primevue/chart'
 
 const firebaseConfig = JSON.parse(import.meta.env.VITE_FIREBASECONFIG)
+console.log(firebaseConfig)
+console.log(import.meta.env.VERCEL_TEST)
 
 initializeApp(firebaseConfig)
 
